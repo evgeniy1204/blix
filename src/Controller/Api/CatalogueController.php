@@ -12,7 +12,7 @@ use Symfony\Component\Routing\Annotation\Route;
 /**
  * Class CatalogueController
  *
- * @Route("catalogue")
+ * @Route("/catalogue")
  */
 class CatalogueController extends AbstractController
 {
