@@ -34,16 +34,16 @@ final class GroupModel implements JsonSerializable
     /**
      * CommunityModel constructor.
      *
-     * @param string $thumb
-     * @param string $name
-     * @param string $type
-     * @param string $url
+     * @param string      $name
+     * @param string      $type
+     * @param string      $url
+     * @param string|null $thumb
      */
     public function __construct(
-        string $thumb,
         string $name,
         string $type,
-        string $url
+        string $url,
+        ?string $thumb = ''
     ) {
         $this->thumb = $thumb;
         $this->name = $name;

@@ -28,11 +28,14 @@ class CategoryDataProvider
 
             /** @var $community Community */
             foreach ($category->getCommunities() as $community) {
+                if (!$community->isActive()) {
+                    continue;
+                }
                 $groupModel = new GroupModel(
-                    $community->getImage(),
                     $community->getName(),
                     $category->getCategoryKey(),
-                    $community->getUrl()
+                    $community->getUrl(),
+                    $community->getImage()
                 );
 
                 $communityModel = new CommunityModel(

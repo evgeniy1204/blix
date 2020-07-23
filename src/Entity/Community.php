@@ -8,6 +8,7 @@ use App\Repository\CommunityRepository;
 use DateTime;
 use DateTimeInterface;
 use Doctrine\ORM\Mapping as ORM;
+use phpDocumentor\Reflection\Types\Boolean;
 use Symfony\Component\HttpFoundation\File\File;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
@@ -83,6 +84,14 @@ class Community
     public function __construct()
     {
         $this->updatedAt = new DateTime();
+    }
+
+    /**
+     * @return bool
+     */
+    public function isActive(): bool
+    {
+        return (bool) $this->active;
     }
 
     /**
