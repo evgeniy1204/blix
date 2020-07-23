@@ -122,9 +122,9 @@ class Community
     }
 
     /**
-     * @return File
+     * @return File|null
      */
-    public function getImageFile(): File
+    public function getImageFile(): ?File
     {
         return $this->imageFile;
     }
