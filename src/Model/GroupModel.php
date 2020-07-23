@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Model;
 
 use JsonSerializable;
@@ -7,7 +9,7 @@ use JsonSerializable;
 /**
  * Class GroupModel
  */
-class GroupModel implements JsonSerializable
+final class GroupModel implements JsonSerializable
 {
     /**
      * @var string
@@ -55,10 +57,10 @@ class GroupModel implements JsonSerializable
     public function jsonSerialize(): array
     {
         return [
-            'thumb'       => $this->thumb,
-            'name'        => $this->name,
-            'type'        => $this->type,
-            'url'         => $this->url,
+            'thumb' => $this->thumb,
+            'name'  => $this->name,
+            'type'  => $this->type,
+            'url'   => $this->url,
         ];
     }
 }

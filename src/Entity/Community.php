@@ -6,6 +6,7 @@ namespace App\Entity;
 
 use App\Repository\CommunityRepository;
 use DateTime;
+use DateTimeInterface;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\HttpFoundation\File\File;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
@@ -105,21 +106,25 @@ class Community
     }
 
     /**
-     * @param File $image
+     * @param File|null $file
+     *
+     * @return $this
      */
-    public function setImageFile(?File $file = null)
+    public function setImageFile(?File $file = null): self
     {
         $this->imageFile = $file;
 
         if ($file) {
             $this->updatedAt = new DateTime();
         }
+
+        return $this;
     }
 
     /**
      * @return File
      */
-    public function getImageFile()
+    public function getImageFile(): File
     {
         return $this->imageFile;
     }
@@ -273,19 +278,19 @@ class Community
     }
 
     /**
-     * @return \DateTimeInterface|null
+     * @return DateTimeInterface|null
      */
-    public function getUpdatedAt(): ?\DateTimeInterface
+    public function getUpdatedAt(): ?DateTimeInterface
     {
         return $this->updatedAt;
     }
 
     /**
-     * @param \DateTimeInterface $updatedAt
+     * @param DateTimeInterface $updatedAt
      *
      * @return $this
      */
-    public function setUpdatedAt(\DateTimeInterface $updatedAt): self
+    public function setUpdatedAt(DateTimeInterface $updatedAt): self
     {
         $this->updatedAt = $updatedAt;
 

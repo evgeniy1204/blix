@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Model;
 
 use JsonSerializable;
@@ -7,7 +9,7 @@ use JsonSerializable;
 /**
  * Class CommunityModel
  */
-class CommunityModel implements JsonSerializable
+final class CommunityModel implements JsonSerializable
 {
     /**
      * @var GroupModel
