@@ -10,17 +10,17 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * Class CommunityController
+ * Class CatalogueController
  *
- * @Route("communities")
+ * @Route("catalogue")
  */
-class CommunityController extends AbstractController
+class CatalogueController extends AbstractController
 {
     /**
      * @param EntityManagerInterface $em
      * @param CategoryDataProvider   $categoryDataProvider
      *
-     * @Route("/", name="communities_index")
+     * @Route("/", name="catalogue_index")
      *
      * @return JsonResponse
      */
