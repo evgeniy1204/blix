@@ -28,6 +28,7 @@ class Community
 
     /**
      * @ORM\ManyToOne(targetEntity=Category::class, inversedBy="communities")
+     * @ORM\JoinColumn(name="category_id", referencedColumnName="id", onDelete="SET NULL")
      */
     private $category;
 
