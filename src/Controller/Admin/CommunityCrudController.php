@@ -53,7 +53,7 @@ class CommunityCrudController extends AbstractCrudController
         $category = AssociationField::new('category');
 
         if (Crud::PAGE_INDEX === $pageName) {
-            return [$id, $category, $description, $subscribers, $cost, $active];
+            return [$id, $category, $name, $subscribers, $cost, $active];
         }
 
         return [
